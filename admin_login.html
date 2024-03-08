@@ -1,1 +1,84 @@
-123123123
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+</head>
+
+<style>
+h1, h2
+{
+    text-align: center;
+}
+
+button
+{
+    margin-top:10px;
+}
+
+.admin_login
+{
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width:30%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+#show
+{
+    cursor:pointer;
+    position:absolute;
+    top:40%;
+    transform:translate(-50%);
+    right:15px;
+}
+</style>
+
+<body>
+    <h1>Admin Login</h1>
+    <hr>
+    <form class="admin_login">
+        <h2>Admin Login</h2>
+  <p>Make sure that you had added to SuperAdmin/Admin</p>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+            <i class="lni lni-layout" id="show"></i>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</body>
+</html>
+
+<script>
+    let show = document.getElementById("show");
+    let pw = document.getElementById("floatingPassword");
+
+    show.onclick = function()
+    {
+        if(pw.type == "password")
+        {
+            pw.type="text";
+            show.className = "lni lni-agenda";
+        }
+        else
+        {
+            pw.type="password";
+            show.className = "lni lni-layout";
+        }
+    }
+</script>
