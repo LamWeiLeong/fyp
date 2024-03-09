@@ -93,6 +93,13 @@ body {
     font-weight: 600;
 }
 
+#admin_icon
+{
+    background-color: white;
+    color:black;
+    font-size: 34px;
+    align-items: center;
+}
 #sidebar:not(.expand) .sidebar-logo,
 #sidebar:not(.expand) a.sidebar-link span {
     display: none;
