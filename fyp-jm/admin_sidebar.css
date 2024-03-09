@@ -25,6 +25,7 @@ a {
 
 li {
     list-style: none;
+    line-height: 30px;
 }
 
 h1 {
@@ -52,7 +53,7 @@ body {
     width: 70px;
     min-width: 70px;
     z-index: 100;
-    transition: all .25s ease-in-out;
+    transition: all .155s ease-in-out;
     background-color: #0e2238;
     display: flex;
     flex-direction: column;
