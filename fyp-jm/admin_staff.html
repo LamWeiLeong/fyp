@@ -12,17 +12,128 @@
       $("#admin_sidebar").load("admin_sidebar.html"); 
     });
     </script> 
+    
 </head>
+<style>
+table
+{
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+}
+table img
+{
+    height:40px;
+    width:40px;
+}
+tr
+{
+    height:75px;
+}
 
+.staff_head
+{
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+}
+
+.staff_head button
+{
+    margin-right: 70px;
+    font-size: 18px;
+}
+</style>
  <!-- <?php include'admin_sidebar.php' ?>  -->
 <body>
 <div id="admin_sidebar"></div>
 <div class="main p-3">
-    <div class="text-center"><!-- write content below -->
-
-    <h1>Testing</h1>
-    <p>This is manage staff page.</p>
+    <div class="staff_head">
+        <h1>Staff List</h1>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+        <form action="add_admin.php" method="POST">
+            <div class="modal-body">
+              <div class="form-group mb-4">
+                <label>Staff ID</label>
+                <input type="text" class="form-control" placeholder="staff id" name="id">
+              </div>
+              <div class="form-group mb-4">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="email" name="email">
+              </div>
+              <div class="form-group mb-4">
+                <label>Telephone Number</label>
+                <input type="text" class="form-control" placeholder="tel.no" name="tel">
+              </div>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+          </div>
+        </div>
+      </div>
+    <hr>
+      </button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Icon</th>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telephone.No</th>
+            <th scope="col">Joined Date</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">1</th>
+            <td><img src="image/admin_default.png"></td>
+            <td>superadmin1</td>
+            <td></td>
+            <td></td>
+            <td>2023-3-11 6:12</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><img src="image/admin_default.png"></td>
+            <td>Testing1122</td>
+            <td>jiaming@gmail.com</td>
+            <td>012-123123321</td>
+            <td>2023-3-11 6:12</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td><img src="image/admin_default.png"></td>
+            <td>Testing1122</td>
+            <td>jiaming@gmail.com</td>
+            <td>012-123123321</td>
+            <td>2023-3-11 6:12</td>
+          </tr>
+        </tbody>
+      </table>
         </div><!-- close text-center -->
     </div><!-- cose main p-3 -->
 
 </body>
+
+<script>
+
+</script>
