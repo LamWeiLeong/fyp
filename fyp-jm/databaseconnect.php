@@ -2,10 +2,10 @@
 $connect= mysqli_connect("localhost","root","","fyp");
 if(!$connect)
 {
-    die("Connection failed : ". myqsli_connect_error());
+    // die("Connection failed : ");
 }
 else
 {
-  echo("Connect successfully!");
+  // echo("Connect successfully!");
 }
 ?>

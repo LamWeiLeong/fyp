@@ -83,6 +83,8 @@ body {
 }
 
 #sidebar {
+    position: fixed;
+    top:60px;
     width: 70px;
     min-width: 70px;
     z-index: 100;

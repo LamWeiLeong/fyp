@@ -44,7 +44,10 @@ tr
 <div class="main p-3">
     <div class="staff_head">
         <h1>Staff List</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
+      <div class="btns">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
+      </div>
     </div>
     <div class="modal" id="myModal">
         <div class="modal-dialog">
