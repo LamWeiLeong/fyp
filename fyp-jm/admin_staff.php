@@ -1,18 +1,13 @@
+<?php session_start(); ?>
+<?php include 'databaseconnect.php'?>
+<?php include 'admin_sidebar.php' ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Staff</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script> 
-    $(function(){
-      $("#admin_sidebar").load("admin_sidebar.html"); 
-    });
-    </script> 
-</head>
 <style>
 table
 {
@@ -44,9 +39,8 @@ tr
     font-size: 18px;
 }
 </style>
- <!-- <?php include'admin_sidebar.php' ?>  -->
+
 <body>
-<div id="admin_sidebar"></div>
 <div class="main p-3">
     <div class="staff_head">
         <h1>Staff List</h1>
@@ -55,19 +49,21 @@ tr
     <div class="modal" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
-      
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Add Staff</h4>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-      
             <!-- Modal body -->
         <form action="add_admin.php" method="POST">
             <div class="modal-body">
               <div class="form-group mb-4">
                 <label>Staff ID</label>
-                <input type="text" class="form-control" placeholder="staff id" name="id">
+                <input type="text" class="form-control" placeholder="staff id" name="id" required>
+              </div>
+              <div class="form-group mb-4">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="full name" name="name">
               </div>
               <div class="form-group mb-4">
                 <label>Email</label>
@@ -82,14 +78,24 @@ tr
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="submit" class="btn btn-primary" name="save_staff">Save</button>
             </div>
         </form>
           </div>
         </div>
       </div>
     <hr>
-      </button>
+    <?php 
+    if(isset($_SESSION['msg']) && $_SESSION['msg'] != ''){
+      ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Hey!</strong> <?php echo $_SESSION['msg']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <?php
+        unset($_SESSION['msg']);
+    }
+    ?>
     <table class="table">
         <thead>
           <tr>
@@ -102,32 +108,25 @@ tr
           </tr>
         </thead>
         <tbody class="table-group-divider">
-          <tr>
-            <th scope="row">1</th>
-            <td><img src="image/admin_default.png"></td>
-            <td>superadmin1</td>
-            <td></td>
-            <td></td>
-            <td>2023-3-11 6:12</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td><img src="image/admin_default.png"></td>
-            <td>Testing1122</td>
-            <td>jiaming@gmail.com</td>
-            <td>012-123123321</td>
-            <td>2023-3-11 6:12</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td><img src="image/admin_default.png"></td>
-            <td>Testing1122</td>
-            <td>jiaming@gmail.com</td>
-            <td>012-123123321</td>
-            <td>2023-3-11 6:12</td>
-          </tr>
+        <?php
+          $result = mysqli_query($connect,"SELECT * FROM staff");
+          $count = mysqli_num_rows($result);
+          
+          while($row = mysqli_fetch_assoc($result))
+          {
+            ?>
+            <tr>
+              <th scope="row"><?php echo $row["staff_id"]; ?></th>
+              <td><img src = "<?php echo $row["profile_pic"];?>"></td>
+              <td><?php echo $row["admin_id"];?></td>
+              <td><?php echo $row["staff_email"];?></td>
+              <td><?php echo $row["staff_tel"];?></td>
+            </tr>
+        <?php
+          }
+        ?>
         </tbody>
-      </table>
+        </table>
         </div><!-- close text-center -->
     </div><!-- cose main p-3 -->
 

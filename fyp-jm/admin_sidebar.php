@@ -45,7 +45,7 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="admin_staff.html" class="sidebar-link" id="admin">
+                    <a href="admin_staff.php" class="sidebar-link" id="admin">
                         <i class="lni lni-bold" id="admin_icon"></i>
                         <span class="admin_name">JiaMing</span>
                     </a>
@@ -53,7 +53,7 @@
                 <hr>
                 
                 <li class="sidebar-item">
-                <a href="admin_landing.html" class="sidebar-link">
+                <a href="admin_landing.php" class="sidebar-link">
                         <i class="lni lni-user"></i>
                         <span>Home/Dashboard</span>
                     </a>

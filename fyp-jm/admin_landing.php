@@ -83,11 +83,9 @@
   grid-template-columns: 1fr 2fr;
 }
 </style>
-<!-- <?php include "admin_sidebar.php"; ?> -->
+<?php include "admin_sidebar.php"; ?>
 
 <body>
-    <div id="admin_sidebar"></div>
-
     <div class="main p-3">
        <div class="main-content"><!-- write content below -->
         <h1 style="font-size:45px;">Overview</h1>
