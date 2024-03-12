@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +13,22 @@
 </head>
 
 <body>
+<?php
+//if(!isset($_SESSION["admin_id"]))
+//{
+?>
+    <!--<form action="admin_login.php">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"
+            style="margin: auto auto auto auto;width:50%;">
+            <strong>Hey!</strong>You should login first before you enter admin panel !
+            <button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </form> -->
+<?php
+//exit();
+//}
+?>
     <div class="wrapper">
-
         <div class="topbar">
             <div class="logo">
                 <h2>SKT PC</h2>
@@ -25,12 +40,13 @@
             <div class="user">
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
-                    style="background-color:white; border:none;">
-                        <img src="image/admin_default.png">
+                    style="background-color:black; border:none;">
+                        <img src= <?php echo $_SESSION['pic'];?>>
+                        <?php echo $_SESSION['admin_id']; ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="a_logout.php">Logout</a></li>
             </div>
         </div><!-- topbar-->
 
@@ -46,8 +62,8 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
                     <a href="admin_staff.php" class="sidebar-link" id="admin">
-                        <i class="lni lni-bold" id="admin_icon"></i>
-                        <span class="admin_name">JiaMing</span>
+                        <img src= <?php echo $_SESSION['pic'];?>>
+                        <?php echo $_SESSION['admin_id']; ?>
                     </a>
                 </li>
                 <hr>

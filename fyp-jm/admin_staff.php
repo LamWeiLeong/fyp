@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php include 'databaseconnect.php'?>
 <?php include 'admin_sidebar.php' ?>
 <!DOCTYPE html>
@@ -46,7 +45,6 @@ tr
         <h1>Staff List</h1>
       <div class="btns">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
       </div>
     </div>
     <div class="modal" id="myModal">
@@ -58,7 +56,7 @@ tr
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <!-- Modal body -->
-        <form action="add_admin.php" method="POST">
+        <form action="a_staff.php" method="POST">
             <div class="modal-body">
               <div class="form-group mb-4">
                 <label>Staff ID</label>
@@ -107,7 +105,7 @@ tr
             <th scope="col">ID</th>
             <th scope="col">Email</th>
             <th scope="col">Telephone.No</th>
-            <th scope="col">Joined Date</th>
+            <th scope="col">Joined Time</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -120,10 +118,11 @@ tr
             ?>
             <tr>
               <th scope="row"><?php echo $row["staff_id"]; ?></th>
-              <td><img src = "<?php echo $row["profile_pic"];?>"></td>
+              <td><img src = "<?php echo $row["p_pic"];?>"></td>
               <td><?php echo $row["admin_id"];?></td>
               <td><?php echo $row["staff_email"];?></td>
               <td><?php echo $row["staff_tel"];?></td>
+              <td><?php echo $row["joined_time"];?></td>
             </tr>
         <?php
           }

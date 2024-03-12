@@ -55,19 +55,19 @@ ion-icon
 <body>
     <h1>Admin Login</h1>
     <hr>
-    <form class="admin_login">
+    <form class="admin_login" action="a_login.php" method="POST">
         <h2>Admin Login</h2>
   <p>Make sure that you had added to SuperAdmin/Admin</p>
         <div class="form-floating mb-3">
-            <input type="test" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="test" class="form-control" id="floatingInput" placeholder="ID" name="id">
             <label for="floatingInput">ID</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pw">
             <label for="floatingPassword">Password</label>
             <ion-icon name="eye-outline" id="show"></ion-icon>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary" name="a_login" values="a_login">Login</button>
     </form>
 </body>
 </html>
