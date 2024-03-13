@@ -14,7 +14,6 @@ if(isset($_POST["save_staff"]))
     $insert = "INSERT INTO staff(admin_id, full_name, p_pic, staff_email, staff_pw, staff_tel, sa, joined_time)
                 values('$id','$name', 'image/admin_default.png', '$email', '$pw', '$tel', '0', '$jt')";
     $insert_run = mysqli_query($connect, $insert);
-
     if($insert_run)
     {
         $_SESSION['msg'] = "Staff $id added successfully!";

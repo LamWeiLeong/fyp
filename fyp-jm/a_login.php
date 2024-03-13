@@ -16,8 +16,10 @@ if(isset($_POST["a_login"]))
     }
     else
     {
+        $_SESSION['id'] = $row['staff_id'];
         $_SESSION['pic'] = $row['p_pic'];
         $_SESSION['admin_id'] = $id;
+        $_SESSION['sa'] = $row['sa'];
         header("location: admin_landing.php");
     }
 }

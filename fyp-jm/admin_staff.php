@@ -44,7 +44,21 @@ tr
     <div class="staff_head">
         <h1>Staff List</h1>
       <div class="btns">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
+          <?php
+          if(isset($_SESSION['sa']) && $_SESSION['sa'] == 1)
+          {
+            ?>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add Staff</button>
+          <?php
+          }
+          else
+          {
+            ?>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-target="#myModal" aria-disabled="false"
+              data-bs-placement="bottom" title="Only SuperAdmin can add the staff!">Add Staff</button>
+          <?php
+          }
+          ?>
       </div>
     </div>
     <div class="modal" id="myModal">
@@ -118,7 +132,7 @@ tr
             ?>
             <tr>
               <th scope="row"><?php echo $row["staff_id"]; ?></th>
-              <td><img src = "<?php echo $row["p_pic"];?>"></td>
+              <td><img src = "image/<?php echo $row['p_pic'];?>"></td>
               <td><?php echo $row["admin_id"];?></td>
               <td><?php echo $row["staff_email"];?></td>
               <td><?php echo $row["staff_tel"];?></td>
@@ -135,5 +149,8 @@ tr
 </body>
 
 <script>
-
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 </script>

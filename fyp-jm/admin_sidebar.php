@@ -41,11 +41,11 @@
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
                     style="background-color:black; border:none;">
-                        <img src= <?php echo $_SESSION['pic'];?>>
+                        <img src= "image/<?php echo $_SESSION['pic'];?>">
                         <?php echo $_SESSION['admin_id']; ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="edit_staff.php?staff_id=<?php echo $_SESSION['id'];?>">Edit Profile</a></li>
                         <li><a class="dropdown-item" href="a_logout.php">Logout</a></li>
             </div>
         </div><!-- topbar-->
@@ -56,13 +56,13 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">Admin</a>>
+                    <a href="#">Admin</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
                     <a href="admin_staff.php" class="sidebar-link" id="admin">
-                        <img src= <?php echo $_SESSION['pic'];?>>
+                        <img src= "image/<?php echo $_SESSION['pic'];?>">
                         <?php echo $_SESSION['admin_id']; ?>
                     </a>
                 </li>
